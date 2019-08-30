@@ -5,14 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ds.appname.R
-import kotlinx.android.synthetic.main.item_art_category.view.*
+import kotlinx.android.synthetic.main.item_artwork_category.view.*
 
-class ArtCategoryAdapter(
+class ArtworkCategoryAdapter(
     private var data: List<String>,
     private var onItemClick: ArtCategorySelectedListener
-) : RecyclerView.Adapter<ArtCategoryAdapter.ArtCategoryHolder>() {
+) : RecyclerView.Adapter<ArtworkCategoryAdapter.ArtCategoryHolder>() {
 
-    private val itemLayout = R.layout.item_art_category
+    private val itemLayout = R.layout.item_artwork_category
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtCategoryHolder {
         val inflater = LayoutInflater.from(parent.context)

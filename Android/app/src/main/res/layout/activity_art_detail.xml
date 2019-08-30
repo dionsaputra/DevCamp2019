@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.ArtDetailActivity">
+    tools:context=".screen.ArtworkDetailActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -58,12 +58,29 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <ImageView
-                android:layout_width="match_parent"
+            <FrameLayout
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@drawable/art_1" />
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/art_1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/space_small"
+                    android:background="@drawable/bg_round_accent"
+                    android:padding="@dimen/space_small"
+                    android:text="Rp 1.200.000"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@android:color/white" />
+
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -110,20 +127,23 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/buyArtworkButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/colorAccent"
+                android:background="@color/colorPrimary"
                 android:text="Buy Artworks"
                 android:textColor="@android:color/white" />
 
             <Button
+                android:id="@+id/hireArtistButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/colorAccent"
+                android:background="@color/colorPrimary"
                 android:text="Hire Artist"
                 android:textColor="@android:color/white" />
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

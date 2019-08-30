@@ -3,7 +3,7 @@ package ds.appname.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import ds.appname.fragment.HomeFragment
+import ds.appname.screen.HomeFragment
 
 class MainPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 

@@ -1,4 +1,4 @@
-package ds.appname.fragment
+package ds.appname.screen
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,13 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import ds.appname.R
-import ds.appname.activity.ArtDetailActivity
-import ds.appname.adapter.ArtCategoryAdapter
+import ds.appname.adapter.ArtworkCategoryAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
-    private lateinit var artCategoryAdapter: ArtCategoryAdapter
+    private lateinit var artCategoryAdapter: ArtworkCategoryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,9 +33,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupArtCategoryAdapter() {
-        artCategoryAdapter = ArtCategoryAdapter(
+        artCategoryAdapter = ArtworkCategoryAdapter(
             listOf("a", "b", "c"),
-            object : ArtCategoryAdapter.ArtCategorySelectedListener {
+            object : ArtworkCategoryAdapter.ArtCategorySelectedListener {
                 override fun onDirectItemClick() {
                     navigateToArtDetail()
                 }
@@ -53,7 +52,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun navigateToArtDetail() {
-        startActivity(Intent(context, ArtDetailActivity::class.java))
+        startActivity(Intent(context, ArtworkDetailActivity::class.java))
     }
 
     private fun navigateToArtList() {

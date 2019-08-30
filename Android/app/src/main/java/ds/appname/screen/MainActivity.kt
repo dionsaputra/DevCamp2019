@@ -1,4 +1,4 @@
-package ds.appname.activity
+package ds.appname.screen
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

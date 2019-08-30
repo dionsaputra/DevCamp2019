@@ -102,13 +102,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            tools:context=".fragment.HomeFragment">
+            tools:context=".screen.HomeFragment">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/mainCategoryArtRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:listitem="@layout/item_art_category" />
+                tools:listitem="@layout/item_artwork_category" />
 
         </LinearLayout>
 

@@ -12,9 +12,10 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".activity.ArtDetailActivity"
-            android:parentActivityName=".activity.MainActivity" />
-        <activity android:name=".activity.MainActivity">
+            android:name=".screen.ArtworkDetailActivity"
+            android:parentActivityName=".screen.MainActivity"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".screen.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

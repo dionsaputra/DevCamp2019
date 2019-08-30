@@ -1,4 +1,4 @@
-package ds.appname.screen
+package ds.appname.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import ds.appname.R
-import kotlinx.android.synthetic.main.dialog_order_finish.*
+import ds.appname.main.MainActivity
+import kotlinx.android.synthetic.main.dialog_message_sent.*
 
-class OrderFinishDialogFragment : DialogFragment() {
+
+class MessageSentDialogFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,12 +23,14 @@ class OrderFinishDialogFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.dialog_order_finish, container, false)
+        return inflater.inflate(R.layout.dialog_message_sent, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        backToHome.setOnClickListener { navigateToHome() }
+        backToHome.setOnClickListener {
+            navigateToHome()
+        }
     }
 
     private fun navigateToHome() {

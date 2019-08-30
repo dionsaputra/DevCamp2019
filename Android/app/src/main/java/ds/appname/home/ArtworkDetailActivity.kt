@@ -1,4 +1,4 @@
-package ds.appname.screen
+package ds.appname.home
 
 import android.content.Intent
 import android.os.Bundle

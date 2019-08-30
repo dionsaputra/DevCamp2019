@@ -1,4 +1,4 @@
-package ds.appname.screen
+package ds.appname.common
 
 
 import android.app.Dialog

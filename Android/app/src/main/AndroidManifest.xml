@@ -16,10 +16,10 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".screen.ArtworkDetailActivity"
-            android:parentActivityName=".screen.MainActivity"
+            android:name=".home.ArtworkDetailActivity"
+            android:parentActivityName=".main.MainActivity"
             android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".screen.MainActivity">
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,9 +1,10 @@
-package ds.appname.adapter
+package ds.appname.main
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import ds.appname.screen.HomeFragment
+import ds.appname.home.HomeFragment
+import ds.appname.order.OrderFragment
 
 class MainPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
@@ -11,6 +12,7 @@ class MainPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     init {
         fragments.add(HomeFragment.newInstance())
+        fragments.add(OrderFragment.newInstance())
     }
 
     override fun getItem(position: Int): Fragment = fragments[position]

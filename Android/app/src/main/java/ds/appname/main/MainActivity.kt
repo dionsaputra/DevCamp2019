@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
     private fun setupMainBottomNavigation() {
         mainBottomNav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.home -> mainViewPager.currentItem =
-                    HOME_POSITION
+                R.id.home -> mainViewPager.currentItem = HOME_POSITION
+                R.id.order -> mainViewPager.currentItem = ORDER_POSITION
             }
             true
         }
@@ -39,5 +39,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val HOME_POSITION = 0
+        private const val ORDER_POSITION = 1
     }
 }

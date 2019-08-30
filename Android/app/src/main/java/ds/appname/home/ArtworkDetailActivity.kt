@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ds.appname.R
 import ds.appname.arengine.PermissionCheckActivity
+import ds.appname.artist.ArtistProfileActivity
 import kotlinx.android.synthetic.main.activity_art_detail.*
 
 class ArtworkDetailActivity : AppCompatActivity() {
@@ -16,6 +17,7 @@ class ArtworkDetailActivity : AppCompatActivity() {
         buyArtworkButton.setOnClickListener { showDialogBuyArtworks() }
         hireArtistButton.setOnClickListener { showDialogHireArtist() }
         showArModeButton.setOnClickListener { showArMode() }
+        artistAvatar.setOnClickListener { navigateToArtistProfile() }
     }
 
     private fun showDialogBuyArtworks() {
@@ -34,5 +36,9 @@ class ArtworkDetailActivity : AppCompatActivity() {
 
     private fun showArMode() {
         startActivity(Intent(this, PermissionCheckActivity::class.java))
+    }
+
+    private fun navigateToArtistProfile() {
+        startActivity(Intent(this, ArtistProfileActivity::class.java))
     }
 }

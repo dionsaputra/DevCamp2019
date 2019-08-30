@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="@dimen/space_normal">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/space_extra_small">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Order #18939081"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+        android:orientation="vertical"
+        android:padding="@dimen/space_normal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="30 Agustus 2019"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_down"
+            android:text="Order #18939081"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 Agustus 2019"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
 
-</LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/statusRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_timeline" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+

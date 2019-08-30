@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 def MAXSTAR_SDK_DIR = '../ARSDK'
@@ -28,7 +27,9 @@ android {
         jni.srcDirs = []
         jniLibs.srcDir "$MAXSTAR_SDK_DIR"
     }
-
+    aaptOptions {
+        noCompress "tflite"
+    }
     archivesBaseName = rootProject.projectDir.getName()
 }
 
@@ -46,6 +47,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.github.vipulasri:timelineview:1.1.0'
     implementation 'com.tbuonomo:creative-viewpager:1.0.1'
+    implementation 'com.google.firebase:firebase-core:16.0.8'
     implementation 'com.google.firebase:firebase-ml-vision:23.0.0'
     implementation 'com.google.firebase:firebase-ml-vision-automl:18.0.1'
 
@@ -56,4 +58,9 @@ dependencies {
     implementation files("$MAXSTAR_SDK_DIR/BT200Ctrl.jar")
     implementation files("$MAXSTAR_SDK_DIR/BT350Ctrl.jar")
     implementation files("$MAXSTAR_SDK_DIR/com.osterhoutgroup.api.ext.jar")
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-ml-vision:23.0.0'
+    implementation 'com.google.firebase:firebase-ml-vision-automl:18.0.1'
+
 }

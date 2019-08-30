@@ -10,7 +10,7 @@ class AppRepo {
         return when (label) {
             "monalisa" -> R.drawable.art_1
             "anting" -> R.drawable.anting_1
-            "botol_anting" -> R.drawable.botol_antik_1
+            "botol_antik" -> R.drawable.botol_antik_1
             else -> 0
         }
     }

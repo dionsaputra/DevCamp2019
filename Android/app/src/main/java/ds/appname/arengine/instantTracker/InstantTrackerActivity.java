@@ -22,15 +22,6 @@ import ds.appname.R;
 import ds.appname.arengine.ARActivity;
 import ds.appname.arengine.util.SampleUtil;
 
-//import com.maxst.ar.CameraDevice;
-//import com.maxst.ar.MaxstAR;
-//import com.maxst.ar.ResultCode;
-//import com.maxst.ar.SensorDevice;
-//import com.maxst.ar.TrackerManager;
-//import com.maxst.ar.engine.ARActivity;
-//import com.maxst.ar.engine.R;
-//import com.maxst.ar.engine.util.SampleUtil;
-
 public class InstantTrackerActivity extends ARActivity implements View.OnTouchListener, View.OnClickListener {
 
 	private InstantTrackerRenderer instantTargetRenderer;

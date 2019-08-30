@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".home.DiscoveryActivity"></activity>
         <activity android:name=".artist.ArtistProfileActivity"></activity>
         <activity
             android:name=".home.ArtworkDetailActivity"

@@ -28,6 +28,9 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        fab_discovery.setOnClickListener{
+            startActivity(Intent(context, DiscoveryActivity::class.java))
+        }
         setupArtCategoryAdapter()
     }
 

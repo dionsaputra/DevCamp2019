@@ -1,8 +1,10 @@
 package ds.appname.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ds.appname.R
+import ds.appname.home.DiscoveryActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         mainBottomNav.selectedItemId = R.id.home
     }
+
 
     companion object {
         private const val HOME_POSITION = 0

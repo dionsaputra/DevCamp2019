@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/space_small"
@@ -15,10 +16,10 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/space_extra_small"
-            android:text="Lukisan"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,10 +40,11 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/firstArt"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/art_1" />
+                    tools:src="@drawable/art_1" />
 
             </androidx.cardview.widget.CardView>
 
@@ -60,10 +62,11 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/secondArt"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/art_2" />
+                    android:src="@drawable/art_5" />
 
             </androidx.cardview.widget.CardView>
 
@@ -81,10 +84,11 @@
                 app:layout_constraintTop_toBottomOf="@id/horizontalGuideline">
 
                 <ImageView
+                    android:id="@+id/thirdArt"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/art_3" />
+                    android:src="@drawable/art_4" />
 
                 <TextView
                     android:layout_width="match_parent"

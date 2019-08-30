@@ -5,10 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ds.appname.R
+import ds.appname.common.load
+import ds.appname.model.ArtCategory
 import kotlinx.android.synthetic.main.item_artwork_category.view.*
 
 class ArtworkCategoryAdapter(
-    private var data: List<String>,
+    private var data: List<ArtCategory>,
     private var onItemClick: ArtCategorySelectedListener
 ) : RecyclerView.Adapter<ArtworkCategoryAdapter.ArtCategoryHolder>() {
 
@@ -33,18 +35,21 @@ class ArtworkCategoryAdapter(
         holder.bind(data[position], onItemClick)
     }
 
-    fun swapData(data: List<String>) {
+    fun swapData(data: List<ArtCategory>) {
         this.data = data
         notifyDataSetChanged()
     }
 
     class ArtCategoryHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(item: String, onItemClick: ArtCategorySelectedListener) = with(itemView) {
-            // TODO: bind model to itemView            
-            firstCard.setOnClickListener { onItemClick.onDirectItemClick() }
-            secondCard.setOnClickListener { onItemClick.onDirectItemClick() }
-            moreCard.setOnClickListener { onItemClick.onMoreItemClick() }
+        fun bind(item: ArtCategory, onItemClick: ArtCategorySelectedListener) = with(itemView) {
+            title.text = item.category
+            firstArt.load(item.firstArt)
+            secondArt.load(item.secondArt)
+            thirdArt.load(item.thirdArt)
+            firstArt.setOnClickListener { onItemClick.onDirectItemClick() }
+            secondArt.setOnClickListener { onItemClick.onDirectItemClick() }
+            thirdArt.setOnClickListener { onItemClick.onMoreItemClick() }
         }
 
     }

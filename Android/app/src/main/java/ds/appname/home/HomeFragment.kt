@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import ds.appname.R
+import ds.appname.model.ArtCategory
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -35,8 +36,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupArtCategoryAdapter() {
-        artCategoryAdapter = ArtworkCategoryAdapter(
-            listOf("a", "b", "c"),
+        artCategoryAdapter = ArtworkCategoryAdapter(ArtCategory.listArtCategory(),
             object : ArtworkCategoryAdapter.ArtCategorySelectedListener {
                 override fun onDirectItemClick() {
                     navigateToArtDetail()

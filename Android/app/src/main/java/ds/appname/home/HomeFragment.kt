@@ -1,4 +1,4 @@
-package ds.appname.screen
+package ds.appname.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import ds.appname.R
-import ds.appname.adapter.ArtworkCategoryAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {

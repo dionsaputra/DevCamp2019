@@ -1,10 +1,11 @@
-package ds.appname.screen
+package ds.appname.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ds.appname.R
+import ds.appname.common.RoundedBottomSheetDialogFragment
 import kotlinx.android.synthetic.main.bottom_sheet_buy_artworks.*
 
 class BuyArtworksFragment : RoundedBottomSheetDialogFragment() {

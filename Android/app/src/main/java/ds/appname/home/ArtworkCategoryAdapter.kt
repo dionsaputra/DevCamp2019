@@ -1,4 +1,4 @@
-package ds.appname.adapter
+package ds.appname.home
 
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +16,13 @@ class ArtworkCategoryAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtCategoryHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return ArtCategoryHolder(inflater.inflate(itemLayout, parent, false))
+        return ArtCategoryHolder(
+            inflater.inflate(
+                itemLayout,
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount(): Int {

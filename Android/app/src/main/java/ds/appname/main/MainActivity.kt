@@ -1,9 +1,8 @@
-package ds.appname.screen
+package ds.appname.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ds.appname.R
-import ds.appname.adapter.MainPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

@@ -8,4 +8,5 @@
     <dimen name="elevation_extra_small">8dp</dimen>
     <dimen name="space_small">8dp</dimen>
     <dimen name="radius_large">32dp</dimen>
+    <dimen name="size_normal">48dp</dimen>
 </resources>

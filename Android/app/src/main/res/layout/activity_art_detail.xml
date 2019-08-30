@@ -82,34 +82,38 @@
 
             </FrameLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:padding="@dimen/space_small"
-                    android:src="@drawable/ic_ar_mode" />
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:padding="@dimen/space_small"
-                    android:src="@drawable/ic_thumb_up" />
-
-            </LinearLayout>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/space_small"
                 android:layout_marginEnd="@dimen/space_small"
-                android:layout_marginBottom="@dimen/space_small"
+                android:layout_marginTop="@dimen/space_normal"
                 android:text="@string/caption"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end">
+
+                <ImageButton
+                    android:id="@+id/showArModeButton"
+                    android:layout_width="@dimen/size_normal"
+                    android:layout_height="@dimen/size_normal"
+                    android:layout_margin="@dimen/space_extra_small"
+                    android:background="@android:color/transparent"
+                    android:padding="@dimen/space_normal"
+                    android:src="@drawable/ic_ar_mode" />
+
+                <ImageButton
+                    android:layout_width="@dimen/size_normal"
+                    android:layout_height="@dimen/size_normal"
+                    android:layout_margin="@dimen/space_extra_small"
+                    android:background="@android:color/transparent"
+                    android:padding="@dimen/space_small"
+                    android:src="@drawable/ic_thumb_up" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

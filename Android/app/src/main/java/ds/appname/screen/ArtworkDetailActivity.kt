@@ -1,8 +1,10 @@
 package ds.appname.screen
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ds.appname.R
+import ds.appname.arengine.PermissionCheckActivity
 import kotlinx.android.synthetic.main.activity_art_detail.*
 
 class ArtworkDetailActivity : AppCompatActivity() {
@@ -13,6 +15,7 @@ class ArtworkDetailActivity : AppCompatActivity() {
 
         buyArtworkButton.setOnClickListener { showDialogBuyArtworks() }
         hireArtistButton.setOnClickListener { showDialogHireArtist() }
+        showArModeButton.setOnClickListener { showArMode() }
     }
 
     private fun showDialogBuyArtworks() {
@@ -27,5 +30,9 @@ class ArtworkDetailActivity : AppCompatActivity() {
             supportFragmentManager,
             HireArtistFragment::class.java.simpleName
         )
+    }
+
+    private fun showArMode() {
+        startActivity(Intent(this, PermissionCheckActivity::class.java))
     }
 }

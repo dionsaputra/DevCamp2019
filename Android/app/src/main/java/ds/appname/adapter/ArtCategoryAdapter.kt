@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ds.appname.R
+import kotlinx.android.synthetic.main.item_art_category.view.*
 
 class ArtCategoryAdapter(
     private var data: List<String>,
@@ -35,7 +36,9 @@ class ArtCategoryAdapter(
 
         fun bind(item: String, onItemClick: ArtCategorySelectedListener) = with(itemView) {
             // TODO: bind model to itemView            
-
+            firstCard.setOnClickListener { onItemClick.onDirectItemClick() }
+            secondCard.setOnClickListener { onItemClick.onDirectItemClick() }
+            moreCard.setOnClickListener { onItemClick.onMoreItemClick() }
         }
 
     }

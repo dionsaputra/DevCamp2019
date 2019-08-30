@@ -5,12 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import ds.appname.R
-import ds.appname.home.ArtworkCategoryAdapter
+import kotlinx.android.synthetic.main.fragment_order.*
 
 class OrderFragment : Fragment() {
 
-    private lateinit var artCategoryAdapter: ArtworkCategoryAdapter
+    private lateinit var orderAdapter: OrderAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +27,15 @@ class OrderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupOrderAdapter()
+    }
 
+    private fun setupOrderAdapter() {
+        orderAdapter = OrderAdapter(listOf("a", "b", "c"))
+        orderRecycler.apply {
+            adapter = orderAdapter
+            layoutManager = LinearLayoutManager(context)
+        }
     }
 
     companion object {

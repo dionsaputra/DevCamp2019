@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+def MAXSTAR_SDK_DIR = '../ARSDK'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -20,6 +22,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    sourceSets.main {
+        jni.srcDirs = []
+        jniLibs.srcDir "$MAXSTAR_SDK_DIR"
+    }
+
+    archivesBaseName = rootProject.projectDir.getName()
 }
 
 dependencies {
@@ -34,4 +44,12 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.material:material:1.0.0'
+
+    //AR Engine
+    implementation 'gun0912.ted:tedpermission:2.2.0'
+    implementation files("$MAXSTAR_SDK_DIR/VideoPlayer.jar")
+    implementation files("$MAXSTAR_SDK_DIR/MaxstAR.jar")
+    implementation files("$MAXSTAR_SDK_DIR/BT200Ctrl.jar")
+    implementation files("$MAXSTAR_SDK_DIR/BT350Ctrl.jar")
+    implementation files("$MAXSTAR_SDK_DIR/com.osterhoutgroup.api.ext.jar")
 }

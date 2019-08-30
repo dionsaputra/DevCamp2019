@@ -1,12 +1,9 @@
 <resources>
     <string name="app_name">appname</string>
-    <string name="home">Home</string>
+    <string name="home">Beranda</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="more">More</string>
-
-
 
     <!--    AR Engine Stuffs    -->
 
@@ -59,4 +56,5 @@
     <string name="map_select">Select map file</string>
     <string name="resize_camera_view">Resize camera view</string>
     <string name="caption">Dan Bandung bagiku bukan cuma masalah geografis, lebih jauh dari itu melibatkan perasaan, yang bersamaku ketika sunyi</string>
+    <string name="discover">Temukan</string>
 </resources>

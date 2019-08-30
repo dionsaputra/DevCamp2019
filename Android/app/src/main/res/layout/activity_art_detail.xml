@@ -96,6 +96,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AR View"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="18sp"
+                    android:textColor="#000000"/>
+
                 <ImageButton
                     android:id="@+id/showArModeButton"
                     android:layout_width="@dimen/size_normal"
@@ -131,6 +139,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:layout_margin="5dp"
                 android:id="@+id/buyArtworkButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -140,6 +149,7 @@
                 android:textColor="@android:color/white" />
 
             <Button
+                android:layout_margin="5dp"
                 android:id="@+id/hireArtistButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

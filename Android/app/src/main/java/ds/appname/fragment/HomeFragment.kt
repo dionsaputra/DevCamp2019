@@ -1,5 +1,6 @@
 package ds.appname.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import ds.appname.R
+import ds.appname.activity.ArtDetailActivity
 import ds.appname.adapter.ArtCategoryAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -36,11 +38,11 @@ class HomeFragment : Fragment() {
             listOf("a", "b", "c"),
             object : ArtCategoryAdapter.ArtCategorySelectedListener {
                 override fun onDirectItemClick() {
-
+                    navigateToArtDetail()
                 }
 
                 override fun onMoreItemClick() {
-
+                    navigateToArtList()
                 }
             })
 
@@ -48,6 +50,13 @@ class HomeFragment : Fragment() {
             adapter = artCategoryAdapter
             layoutManager = LinearLayoutManager(context)
         }
+    }
+
+    private fun navigateToArtDetail() {
+        startActivity(Intent(context, ArtDetailActivity::class.java))
+    }
+
+    private fun navigateToArtList() {
     }
 
     companion object {

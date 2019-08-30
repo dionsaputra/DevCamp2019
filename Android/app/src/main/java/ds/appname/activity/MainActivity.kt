@@ -1,7 +1,8 @@
-package ds.appname
+package ds.appname.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import ds.appname.R
 import ds.appname.adapter.MainPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -25,7 +26,8 @@ class MainActivity : AppCompatActivity() {
     private fun setupMainBottomNavigation() {
         mainBottomNav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.home -> mainViewPager.currentItem = HOME_POSITION
+                R.id.home -> mainViewPager.currentItem =
+                    HOME_POSITION
             }
             true
         }

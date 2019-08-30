@@ -6,13 +6,15 @@ import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.core.content.ContextCompat
 import com.tbuonomo.creativeviewpager.adapter.CreativePagerAdapter
 import ds.appname.R
+import ds.appname.common.load
+import kotlinx.android.synthetic.main.item_showcase.view.*
 
 class ArtistShowcaseAdapter(private val data: List<String>, val context: Context) :
     CreativePagerAdapter {
+
+    private var images = listOf<Int>(R.drawable.art_1, R.drawable.art_2, R.drawable.art_3)
 
     override fun instantiateHeaderItem(
         inflater: LayoutInflater,
@@ -20,6 +22,7 @@ class ArtistShowcaseAdapter(private val data: List<String>, val context: Context
         position: Int
     ): View {
         val view = inflater.inflate(R.layout.item_showcase, container, false)
+        view.contentImage.load(images[position])
         return view
     }
 
@@ -44,6 +47,6 @@ class ArtistShowcaseAdapter(private val data: List<String>, val context: Context
 
     override fun requestBitmapAtPosition(position: Int): Bitmap? {
         // Return the bitmap used for the position
-        return BitmapFactory.decodeResource(context.resources, R.drawable.art_1)
+        return BitmapFactory.decodeResource(context.resources, images[position])
     }
 }

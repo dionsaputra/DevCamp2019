@@ -16,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".arengine.instantTracker.InstantTrackerActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+
+        <activity
+            android:name=".arengine.camera_config.CameraConfigureActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+
+
+        <activity
+            android:name=".arengine.PermissionCheckActivity"
+            android:configChanges="orientation|screenSize"/>
     </application>
 
 </manifest>

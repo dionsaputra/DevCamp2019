@@ -1,13 +1,16 @@
 package ds.appname.home;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -26,6 +29,7 @@ import com.google.firebase.ml.vision.label.FirebaseVisionOnDeviceAutoMLImageLabe
 import java.util.List;
 
 import ds.appname.R;
+import ds.appname.repository.AppRepo;
 
 public class DiscoveryActivity extends AppCompatActivity {
     private static final int CAMERA_REQUEST = 1888; // field
@@ -59,8 +63,8 @@ public class DiscoveryActivity extends AppCompatActivity {
     }
 
 
-    private void takePicture(){ //you can call this every 5 seconds using a timer or whenever you want
-        Intent cameraIntent = new  Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+    private void takePicture() { //you can call this every 5 seconds using a timer or whenever you want
+        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(cameraIntent, CAMERA_REQUEST);
     }
 
@@ -69,7 +73,10 @@ public class DiscoveryActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             Bitmap picture = (Bitmap) data.getExtras().get("data");//this is your bitmap image and now you can do whatever you want with this
-            //TODO: bitmapnya disini
+
+            ImageView captureView = (ImageView) findViewById(R.id.captureResult);
+            captureView.setImageBitmap(picture);
+
             try {
                 inferenceBitmap(picture);
             } catch (FirebaseMLException e) {
@@ -94,12 +101,28 @@ public class DiscoveryActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionImageLabel>>() {
                     @Override
                     public void onSuccess(List<FirebaseVisionImageLabel> labels) {
-                        for (FirebaseVisionImageLabel label: labels) {
+
+                        String selectedLabel = "";
+                        double maxConfidence = 0.0;
+
+                        for (FirebaseVisionImageLabel label : labels) {
                             String text = label.getText();
                             float confidence = label.getConfidence();
                             Log.d(TAG, "onSuccess: " + text + " : " + confidence);
-                            //TODO: disini labelnya
+
+                            if (maxConfidence < confidence) {
+                                maxConfidence = confidence;
+                                selectedLabel = text;
+                            }
                         }
+
+                        AppRepo appRepo = new AppRepo();
+                        ImageView predictImage = (ImageView) findViewById(R.id.predictResult);
+                        predictImage.setImageDrawable(ContextCompat.getDrawable(DiscoveryActivity.this, appRepo.getImage(selectedLabel)));
+
+                        TextView predictArtist = (TextView) findViewById(R.id.artist);
+                        predictArtist.setText("Karya seni oleh " + appRepo.getArtist(selectedLabel));
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

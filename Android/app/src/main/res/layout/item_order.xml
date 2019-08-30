@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,23 +12,24 @@
         android:padding="@dimen/space_normal">
 
         <TextView
+            android:id="@+id/orderId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/ic_keyboard_arrow_down"
-            android:text="Order #18939081"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            tools:text="Order #18939081" />
 
         <TextView
+            android:id="@+id/dateTme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="30 Agustus 2019"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            tools:text="30 Agustus 2019" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/statusRecycler"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/item_timeline" />
+            tools:text="Bandung, Indonesia" />
 
     </LinearLayout>
 

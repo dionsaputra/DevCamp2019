@@ -1,15 +1,18 @@
 package ds.appname.order
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ds.appname.R
+import ds.appname.model.Order
 import kotlinx.android.synthetic.main.item_order.view.*
+import java.text.SimpleDateFormat
+
 
 class OrderAdapter(
-    private var data: List<String>,
+    private var data: List<Order>,
     private val onItemClick: ((String) -> Unit)? = null
 ) : RecyclerView.Adapter<OrderAdapter.OrderHolder>() {
 
@@ -28,20 +31,21 @@ class OrderAdapter(
         holder.bind(data[position], onItemClick)
     }
 
-    fun swapData(data: List<String>) {
+    fun swapData(data: List<Order>) {
         this.data = data
         notifyDataSetChanged()
     }
 
     class OrderHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val orderStatusAdapter = OrderStatusAdapter(listOf("a", "b", "c"))
+        @SuppressLint("SetTextI18n")
+        fun bind(item: Order, onItemClick: ((String) -> Unit)?) = with(itemView) {
+            orderId.text = "Order #${item.orderId}"
 
-        fun bind(item: String, onItemClick: ((String) -> Unit)?) = with(itemView) {
-            statusRecycler.apply {
-                adapter = orderStatusAdapter
-                layoutManager = LinearLayoutManager(itemView.context)
-            }
+            val simpleDate = SimpleDateFormat("dd/MM/yyyy HH:mm")
+            dateTme.text = simpleDate.format(item.dateTime)
+
+            address.text = item.customerAddress
         }
 
     }

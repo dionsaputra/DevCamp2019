@@ -10,12 +10,15 @@
 		android:layout_height="match_parent"/>
 
 	<Button
+		android:background="@color/colorPrimary"
+		android:theme="@style/Widget.MaterialComponents.Button"
 		android:id="@+id/start_tracking"
-		android:layout_width="wrap_content"
+		android:layout_width="200dp"
 		android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true"
 		android:layout_centerHorizontal="true"
 		android:layout_marginBottom="10dp"
-		android:text="@string/start_tracking"/>
+		android:text="Taruh Karya"
+		android:textColor="#FFFF"/>
 
 </RelativeLayout>
